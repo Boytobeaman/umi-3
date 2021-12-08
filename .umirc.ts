@@ -29,6 +29,13 @@ export default defineConfig({
         name: 'b', // 兼容此写法
       }, 
     },
+    { 
+      path: '/c', 
+      component: '@/pages/c/index',
+      menu: {
+        name: 'c', // 兼容此写法
+      }, 
+    },
   ],
   fastRefresh: {},
 });
