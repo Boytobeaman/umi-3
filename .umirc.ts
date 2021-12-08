@@ -2,6 +2,7 @@ import { defineConfig } from 'umi';
 
 export default defineConfig({
   layout: {},
+  "sass": {},
   nodeModulesTransform: {
     type: 'none',
   },
