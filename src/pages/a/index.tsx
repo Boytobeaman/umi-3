@@ -4,7 +4,7 @@ import './index.scss'
 function IndexPage() {
   return (
     <div>
-      <h1>Page a 2</h1>
+      <h1>Page a 3</h1>
       <p className="a-class">hhh <span className="b-class">ddd</span></p>
     </div>
   );
