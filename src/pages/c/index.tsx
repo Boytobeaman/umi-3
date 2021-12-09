@@ -17,7 +17,9 @@ function IndexPage() {
       <div>
         <p>count: {count}</p>
         <button onClick={() => setCount(count + 1)}>add</button>
-        <button onClick={toPageA}>go to page a</button>
+        <button onClick={toPageA}>(history.push)go to page a</button>
+
+        <button onClick={()=> { window.location.href = `/a`}}>(window.location.href)go to page a</button>
       </div>
       
       <img src="/images/steve.jpg" />
