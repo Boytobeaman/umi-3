@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'umi';
 
 function IndexPage() {
@@ -10,6 +10,37 @@ function IndexPage() {
     history.push('/a');
   }
 
+
+  const filePath = `http://www.hunanjz.com/img/in5.png`
+  function drawImg() {
+    const img = document.querySelector('#Img');
+
+    img.onload = () => {
+     
+    };
+    img.onerror = (err) => {
+      let xmlHttp;
+      if (window.ActiveXObject) {
+        xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+      } else if (window.XMLHttpRequest) {
+        xmlHttp = new XMLHttpRequest();
+      }
+      debugger
+      xmlHttp.open('Get', filePath, false);
+      xmlHttp.send();
+      if (xmlHttp.status === 404) {
+        console.log('文件正在上传，请稍后再试！');
+      } else {
+        console.log('文件预览异常，请下载后查看！');
+      }
+    };
+    debugger
+    img.src = filePath;
+  }
+
+  useEffect(() => {
+    drawImg()
+  }, [])
 
   return (
     <div>
@@ -23,6 +54,7 @@ function IndexPage() {
       </div>
       
       <img src="/images/steve.jpg" />
+      <img src="" alt="" id="Img" />
     </div>
   );
 }
